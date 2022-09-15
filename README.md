@@ -25,7 +25,13 @@ or
       }, [fetchNfts]);
 
       return (
-        isLoading ? <div>Loading...</div> : <div>{nfts}</div>
+        isLoading ? <div>Loading...</div> : (
+          <div>
+            {nfts.map((nft) => (
+              <div key={nft.id}>{nft.id}</div>
+            ))}
+          </div>
+        );
       );
     }
 
